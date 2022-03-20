@@ -23,7 +23,7 @@ class FocalLoss(nn.Module):
         The losses are averaged across observations for each minibatch.
 
         Args:
-            alpha(1D Tensor, Variable) : the scalar factor for this criterion
+            alpha(1D Tensor, Variable) : the scalar factor for this criterion, 0.75 in paper
             gamma(float, double) : gamma > 0; reduces the relative loss for well-classiﬁed examples (p > .5), 
                                    putting more focus on hard, misclassiﬁed examples
             size_average(bool): By default, the losses are averaged over observations for each minibatch.
