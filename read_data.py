@@ -70,7 +70,7 @@ def process_file_data(df, label_dict, save_path):
         label_total = np.zeros((1, 1))
         for single_file in df[app]:
             mag_data, total_num = read_single_file_data(single_file)
-            mag_data_total = np.vstack((all_data, mag_data))
+            mag_data_total = np.vstack((mag_data_total, mag_data))
             mag_label = np.array([label]*total_num).reshape(-1, 1)
             label_total = np.vstack((label_total, mag_label))
         mag_data_total = mag_data_total[1:]
