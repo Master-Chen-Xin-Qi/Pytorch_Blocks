@@ -37,6 +37,13 @@ plot.xlabel('Sample')
 plot.ylabel('Amplitude')
 
 # Plot the spectrogram
+#################
+# Fs: 采样频率
+# NFFT: FFT的点数，默认是256
+# noverlap: 两个FFT之间的重叠点数，默认是128
+# 例子：假如300个点，采样率50Hz，则一共是6s的数据。设置Fs=50，NFFT=50，noverlap=0，则每次取50个点，
+# 无重叠，横轴正好是6秒
+#################
 plot.subplot(212)
 powerSpectrum, freqenciesFound, time, imageAxis = plot.specgram(s2, Fs=samplingFrequency)
 plot.xlabel('Time')
