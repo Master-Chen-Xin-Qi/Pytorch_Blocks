@@ -27,7 +27,7 @@ class MyDataset(Dataset):
     def __getitem__(self, index):
         pic_file = self.pic_names[index]
         label = self.labels[index]
-        pic = Image.open(pic_file)
+        pic = Image.open(pic_file).convert('RGB')
         pic = transforms.ToTensor()(pic)
         label = torch.tensor(label, dtype=torch.long)
         return pic, label
