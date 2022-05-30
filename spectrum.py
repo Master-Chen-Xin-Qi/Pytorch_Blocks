@@ -49,3 +49,18 @@ powerSpectrum, freqenciesFound, time, imageAxis = plot.specgram(s2, Fs=samplingF
 plot.xlabel('Time')
 plot.ylabel('Frequency')
 plot.show() 
+
+# template
+NFFT = 2**7
+FS = 100
+spectrum, freqs, time, imageAxis = plot.specgram(single_data, 
+                            NFFT=NFFT, 
+                            window=np.hanning(M=NFFT),
+                            Fs=FS, 
+                            noverlap=NFFT*0.8,
+                            sides='onesided',
+                            mode='psd',
+                            scale_by_freq=True,
+                            # cmap="plasma",  #color
+                            detrend='linear',
+                            xextent=None)
